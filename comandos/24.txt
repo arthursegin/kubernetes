@@ -1,0 +1,11 @@
+cria o pod com as configurações do arquivo dp.yaml na pasta /deployments
+kubectl create -f .\deployment\dp.yaml
+
+mostra o nome/quantidade/idade dos pods criados com deployments
+kubectl get deployment
+
+faz uma descrição completa do deployment mostrando os pods/cluster/deployment/replicaset
+kubectl get all
+
+mostra os detalhes do deployment "frontend-dp"
+kubectl describe deployment frontend-dp

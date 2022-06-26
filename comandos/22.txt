@@ -1,0 +1,14 @@
+cria o pod com as configurações do arquivo rs1.yaml na pasta /replicaset
+kubectl create -f .\replicasets\rs1.yaml
+
+mostra o nome/quantidade/idade dos pods criados com replicaset
+kubectl get replicaset
+
+faz uma descrição completa do replicaset com nome "frontend-rs"
+kubectl describe replicaset frontend-rs
+
+roda o script do replicaset porém alterando o campo "replicas" com o valor 4
+kubectl scale replicaset frontend-rs --replicas=4
+
+apaga o replicaset com nome "teste"
+kubectl delete replicaset teste

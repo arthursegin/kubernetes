@@ -1,0 +1,6 @@
+cria o pod através do script yaml
+kubectl create -f .\pod.yaml
+
+
+apagar o pod "nginx-4"
+kubectl delete pod nginx-4

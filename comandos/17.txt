@@ -1,0 +1,11 @@
+cria o pod com a imagem do nginx
+kubectl run nginx --image nginx
+
+lista os pods criados no cluster
+kubectl get pods
+
+mostra o status e o IP pod
+kubectl get pods -o wide
+
+faz uma descrição completa do pod nginx
+kubectl describe pods nginx

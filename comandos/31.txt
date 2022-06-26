@@ -1,0 +1,23 @@
+cria o pod com as configurações do arquivo mysql.yaml na pasta /pods
+kubectl create -f .\pods\mysql.yaml --save-config --record
+
+faz uma descrição completa do pod mysql-pod para saber o IP
+kubectl describe pod mysql-pod
+IP 172.17.0.3
+
+cria o pod com as configurações do arquivo webapp.yaml na pasta /deployment
+kubectl create -f .\deployment\webapp.yaml --save-config --record
+
+acessa o terminal do pod com nome webapp-5f68bb577b-sh877
+kubectl exec -it webapp-5f68bb577b-sh877 -- bash
+
+dentro do conteiner roda os comandos abaixo
+apt update
+apt install default-mysql-client -y
+mysql -h 172.17.0.3 -uroot -ppassword teste
+
+rodar os scripts SQL abaixo
+create table pessoas (id int primary key auto_increment, nome varchar(255), email varchar (255));
+show tables;
+insert into pessoas (nome, email) values ("Joao", "joao@email.com");
+select * from pessoas;

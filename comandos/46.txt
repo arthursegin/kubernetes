@@ -1,0 +1,11 @@
+cria o namespace com as configurações do arquivo vote.yaml na pasta /namespace
+kubectl create -f .\namespace\vote.yaml --save-config --record
+
+cria todos os arquivos .yaml  na pasta /deployment
+kubectl create -f .\deployment\ --save-config --record
+
+faz uma descrição completa do namespace com nome vote
+kubectl get all -n vote
+
+mostra a ulr do serviço result no namespace vote
+minikube service result --url -n vote

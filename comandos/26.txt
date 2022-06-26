@@ -1,0 +1,23 @@
+rodar um deploy do script frontend.yaml na pasta /deployments
+kubectl create -f .\deployment\frontend.yaml --save-config --record
+
+faz uma descrição completa do deployment mostrando os pods/cluster/deployment/replicaset
+kubectl get all
+
+mostra o status do deployment realizado com o nome "frontend-dp"
+kubectl rollout status deployment.app/frontend-dp
+
+mostra o histórico de versões do deployment realizado com o nome "frontend-dp"
+kubectl rollout history deployment.app/frontend-dp
+
+rodar uma atualização do script frontend.yaml na pasta /deployments
+kubectl apply -f .\deployment\frontend.yaml
+
+mostra a descrição do deployment realizado com o nome "frontend-dp"
+kubectl describe deployment.apps/frontend-dp
+
+faz o rollback para a ultima versão do deployment realizado com o nome "frontend-dp"
+kubectl rollout undo deployment.app/frontend-dp
+
+faz o rollback para uma versão específica do deployment realizado com o nome "frontend-dp"
+kubectl rollout undo deployment.app/frontend-dp --to-revision=1
